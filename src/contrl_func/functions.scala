@@ -36,4 +36,12 @@ object functions {
         result
     }
     val sum_result = sum(2, 4, 6, 8)
+    // if we want to pass an actual Seq
+    // then we have to use a special syntax
+    val seq_result = sum(1 to 10: _*)
+    // this is also used in recursive calls
+    def recursive(args: Int*): Int = {
+      if (args.length == 0) 0 
+      else args.head + recursive(args.tail: _*)
+    }
 }
