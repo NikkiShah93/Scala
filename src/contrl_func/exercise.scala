@@ -15,6 +15,16 @@ object exercis {
   // write a function that, given a string, returns a string
   // of all its vowels.
   def vowel_return(str: String) = {
-    for (s <- str if ("aeiou".contains(s)) s)
+    var vowels = ""
+    for (s <- str) if (is_vowel(s)) vowels += s
+    vowels
   }
+
+  // using for ... yield
+  // by incorporating guards
+  def vowel_yield(str: String) = {
+    for (s <- str if is_vowel(s)) yield s
+  }
+
+
 }
