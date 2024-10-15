@@ -26,5 +26,17 @@ object exercis {
     for (s <- str if is_vowel(s)) yield s
   }
 
+  // the recursive way
+  // not the best approach in Scala
+  def vowel_recursive(str: String): String = {
+    if (str.length == 0) ""
+    else {
+    val start = str(0)
+    var rest = vowel_recursive(str.substring(1))
+    if (is_vowel(start)) start + rest else rest
+    }
+  }
 
+  // using the while loop
+  
 }
