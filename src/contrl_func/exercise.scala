@@ -49,4 +49,9 @@ object exercis {
   }
 
   // adding more functionalities
+  def advanced_vowels(str: String, vowelChar: String = "aeiou",
+   ignoreCase: Boolean = true): String = {
+    if (ignoreCase) advanced_vowels(str.toLowerCase, vowelChar, false)
+    for (ch <- str if vowelChar.contains(ch)) yield ch
+   }
 }
