@@ -38,5 +38,15 @@ object exercis {
   }
 
   // using the while loop
-  
+  def vowel_while(str: String) = {
+    var i = 0
+    var result = ""
+    while (i < str.length) {
+      if (is_vowel(str(i))) result += str(i)
+      i += 1
+    }
+    result
+  }
+
+  // adding more functionalities
 }
