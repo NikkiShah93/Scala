@@ -29,4 +29,26 @@ object arrays {
   // in order to go between Arrays and ArrayBuffers
   val b2 = b.toArray
   val a2 = a.toBuffer
+
+  // if we want to mutate the arrays
+  // we should create new ones 
+  val b3 = for (el <- b2 if el % 2 == 0) yield el
+
+  // built-in functions for arrays
+  // to sum things up
+  println("sum of b elemenets is: "+b2.sum)
+  // getting min and max
+  println("max of b elemenets is: "+b2.max)
+  println("min of b elemenets is: "+b2.min)
+  // sorting
+  // which doesn't impact the original
+  println("sorted b is: "+b2.sorted)
+  // reversing
+  println("sorted b is: "+b2.reverse)
+  // to string method works like Java
+  println(ArrayBuffer(1, 2, 6, 9).toString)
+  // if you want to see the actual elements
+  // and to have it converted nicely
+  // we should use mkString
+  println(ArrayBuffer(1, 2, 6, 9).mkString(sep= " | "))
 }
